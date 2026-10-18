@@ -3,9 +3,11 @@ package com.shiva.smartemployeemanagement.leave.api.request;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
+import lombok.Data;
+
 
 import java.time.LocalDate;
-
+@Data
 public class LeaveRequestDto {
     @NotNull(message = "Employee ID is required")
     @Positive(message = "Employee ID must be positive")
@@ -20,35 +22,4 @@ public class LeaveRequestDto {
     @NotBlank(message = "Leave reason is required")
     private String reason;
 
-    public Integer getEmployeeId() {
-        return employeeId;
-    }
-
-    public void setEmployeeId(Integer employeeId) {
-        this.employeeId = employeeId;
-    }
-
-    public LocalDate getStartDate() {
-        return startDate;
-    }
-
-    public void setStartDate(LocalDate startDate) {
-        this.startDate = startDate;
-    }
-
-    public LocalDate getEndDate() {
-        return endDate;
-    }
-
-    public void setEndDate(LocalDate endDate) {
-        this.endDate = endDate;
-    }
-
-    public String getReason() {
-        return reason;
-    }
-
-    public void setReason(String reason) {
-        this.reason = reason;
-    }
 }
